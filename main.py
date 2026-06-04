@@ -3,11 +3,13 @@ from collections.abc import Generator
 from pyswip.prolog import Prolog, PrologError
 
 
+
 class PrologShell:
     """Interactive Prolog shell with lazy solution enumeration."""
 
     prolog: Prolog
     _active_generator: Generator | None
+
 
     def __init__(self) -> None:
         """Initialize the Prolog engine."""
@@ -15,12 +17,14 @@ class PrologShell:
         self.prolog = Prolog()
         self._active_generator = None
 
+
     def _close_active_query(self) -> None:
         """Close the currently open query by discarding the generator."""
 
         if self._active_generator is not None:
             # Discard the generator
             self._active_generator = None
+
 
     def consult_file(self, filename: str) -> None:
         """Consult a Prolog file, print success or error."""
@@ -30,6 +34,7 @@ class PrologShell:
             print(f"Loaded: {filename}")
         except PrologError as e:
             print(f"Error consulting {filename}: {e}")
+
 
     @staticmethod
     def _format_bindings(bindings: dict) -> str:
@@ -41,6 +46,7 @@ class PrologShell:
         parts = [f"{var} = {val}" for var, val in bindings.items()]
 
         return ", ".join(parts)
+
 
     def run_new_query(self, query_str: str) -> bool:
         """
@@ -92,6 +98,7 @@ class PrologShell:
             self._close_active_query()
             return False
 
+
     def get_next_solution(self) -> None:
         """Print the next solution of the active query, if any."""
 
@@ -111,6 +118,7 @@ class PrologShell:
         except Exception as e:
             print(f"Unexpected error: {e}")
             self._close_active_query()
+
 
     def repl(self) -> None:
         """Main Read-Eval-Print Loop."""
@@ -144,6 +152,7 @@ class PrologShell:
 
             # Normal query
             self.run_new_query(user_input)
+
 
 
 def main() -> None:
