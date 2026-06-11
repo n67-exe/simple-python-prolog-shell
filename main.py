@@ -2,6 +2,8 @@
 A command‑line interactive Prolog REPL shell built with PySwip.
 """
 
+__version__ = "0.2.0-dev"
+
 
 
 import argparse
@@ -167,6 +169,8 @@ def main() -> None:
 	parser.suggest_on_error = True
 
 	parser.add_argument("file", nargs="?", help="Prolog source file to consult at startup")
+	parser.add_argument("-V", "--version", action='version', version=f"{__version__}")
+
 	args = parser.parse_args()
 
 	shell = PrologShell()
