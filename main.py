@@ -162,7 +162,7 @@ class PrologShell:
 
 
 def main() -> None:
-	parser = argparse.ArgumentParser(description="Interactive Prolog shell with pyswip")
+	parser = argparse.ArgumentParser(description=__doc__)
 
 	parser.suggest_on_error = True
 
