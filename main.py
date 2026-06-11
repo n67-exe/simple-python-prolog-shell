@@ -1,3 +1,9 @@
+"""
+A command‑line interactive Prolog REPL shell built with PySwip.
+"""
+
+
+
 import argparse
 from collections.abc import Generator
 from pyswip.prolog import Prolog, PrologError
