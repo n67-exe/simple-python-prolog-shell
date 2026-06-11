@@ -157,6 +157,9 @@ class PrologShell:
 
 def main() -> None:
 	parser = argparse.ArgumentParser(description="Interactive Prolog shell with pyswip")
+
+	parser.suggest_on_error = True
+
 	parser.add_argument("file", nargs="?", help="Prolog source file to consult at startup")
 	args = parser.parse_args()
 
