@@ -168,15 +168,15 @@ def main() -> None:
 
 	parser.suggest_on_error = True
 
-	parser.add_argument("file", nargs="?", help="Prolog source file to consult at startup")
+	parser.add_argument("files", nargs='*', help="Prolog source files to consult at startup")
 	parser.add_argument("-V", "--version", action='version', version=f"{__version__}")
 
 	args = parser.parse_args()
 
 	shell = PrologShell()
 
-	if args.file:
-		shell.consult_file(args.file)
+	for file in args.files:
+		shell.consult_file(file)
 
 	shell.repl()
 
