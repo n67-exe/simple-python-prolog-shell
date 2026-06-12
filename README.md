@@ -1,5 +1,7 @@
 # Simple Python Prolog Shell (SPPS)
 
+### Version 0.2.0-dev
+
 A command‑line interactive Prolog REPL shell built with [PySwip](https://pyswip.org/).
 It supports lazy enumeration of solutions
 and can load Prolog source files at startup.
