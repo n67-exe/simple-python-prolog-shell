@@ -1,5 +1,6 @@
 """
 A command‑line interactive Prolog REPL shell built with PySwip.
+Supports lazy solution enumeration and can load Prolog source files at startup.
 """
 
 __version__ = "0.2.0-dev"
