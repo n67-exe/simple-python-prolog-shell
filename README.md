@@ -19,6 +19,20 @@ and can load Prolog source files at startup.
   See [Installing SWI-Prolog](https://pyswip.readthedocs.io/en/stable/get_started.html#install-swi-prolog).
 
 
+## CLI Arguments
+
+```yaml
+usage: main.py [-h] [-V] [files ...]
+
+positional arguments:
+  files          Prolog source files to consult at startup
+
+options:
+  -h, --help     show this help message and exit
+  -V, --version  show program's version number and exit
+```
+
+
 ## CLI Usage
 
 | Command   | Action                                   |
